@@ -1,0 +1,14 @@
+<!-- Form fetch data per player -->
+<form action="/" method="get" name="player-extra-info-form" class="player-extra-info-form">
+    <input type="number" name="playerId" hidden value="<%- player.playerId %>">
+    <input type="submit" value="i">
+</form>
+
+<!-- Modal with extra info -->
+<div class="modal" id="modal<%- player.playerId %>">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="playerInfo"></p>
+    </div>
+</div>
+

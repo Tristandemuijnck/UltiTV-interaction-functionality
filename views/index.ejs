@@ -1,5 +1,29 @@
 <%- include('./partials/head')  %>
 
-Html inhoud
+<main>
+    <!-- Game info -->
+    <%- include ('./modules/gameInfo', {data:data}) %>
+
+    <!-- Team info -->
+    <%- include ('./modules/teamInfo', {data:data}) %>
+
+    <!-- Tab selector -->
+    <%- include ('./modules/tabSelector') %>
+
+    <!-- Points -->
+    <%- include ('./modules/points', {parsedStats:parsedStats}) %>
+
+    <!-- Legend -->
+    <%- include ('./modules/legend') %>
+
+    <!-- Players -->
+    <div class="players">
+        <!-- Team one players -->
+        <%- include ('./modules/playerlist/team1Players', {data:data}) %>
+
+        <!-- Team two players -->
+        <%- include ('./modules/playerlist/team2Players', {data:data}) %>
+    </div>
+</main>
 
 <%- include('./partials/foot')  %>
