@@ -18,7 +18,7 @@ server.set("port", process.env.PORT || 8000)
 
 server.use(express.static("public"))
 server.use(bodyParser.json())
-server.use(bodyParser.urlencoded({extended: true}));
+server.use(bodyParser.urlencoded({extended: true}))
 
 server.get("/", async (req, res) => {
     const data = parsedData
@@ -48,11 +48,15 @@ server.get("/", async (req, res) => {
     } else {
         res.render('index', {data})
     }    
-});
+})
+
+server.get("/teams", async (req, res) => {
+    res.render('teams')
+})
 
 server.listen(server.get("port"), () => {
     console.log(`Application started on http://localhost:${server.get("port")}`)
-});
+})
 
 // Api call function
 async function dataFetch(url) {

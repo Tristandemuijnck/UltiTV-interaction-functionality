@@ -1,0 +1,35 @@
+<%- include('./partials/head')  %>
+
+<main>
+    <!-- Teams -->
+    <section class="teams">
+        <div class="top-info">
+            <h1 class="teams-heading">Amsterdam Action</h1>
+            <div class="division-selector">
+                <button class="division-btn all-division">All</button>
+                <button class="division-btn mixed-division">Mixed</button>  
+            </div>
+        </div>
+        <div class="teams-list">
+            <table class="team-table">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="3">Team</th>
+                        <th scope="col" colspan="2">Division</th>
+                        <th scope="col" colspan="1">Seed</th>
+                        <th scope="col" colspan="3">From</th>
+                        <th scope="col" colspan="3">Country</th>
+                        <th scope="col" colspan="1">Flag</th>
+                        <th scope="col" colspan="1">Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%- include("./modules/teamList/teamsEntry") %>
+                </tbody>
+            </table>
+        </div>
+        <button class="add-team"><span class="add-plus">+</span> Add Team</button>
+    </section>
+</main>
+
+<%- include('./partials/foot')  %>
