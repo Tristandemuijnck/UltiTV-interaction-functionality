@@ -1,0 +1,26 @@
+<%- include('./partials/head')  %>
+
+<main class="players-main">
+    <!-- Players -->
+    <section class="players-list">
+        <div class="top-info">
+            <h1 class="team-player-heading">Westerpark Warriors - (1) Mixed</h1>
+        </div>
+        <div class="team-player-list">
+            <%- include('./modules/teamPlayers/playerCard') %>
+        </div>
+        <button class="add-team"><span class="add-plus">+</span> Add Player</button>
+    </section>
+    <section class="team-facts">
+        <div class="top-info">
+            <h1 class="team-facts-heading">Facts</h1>
+        </div>
+        <div class="team-facts-list">
+            <%- include('./modules/teamPlayers/teamFactCard') %>
+        </div>
+        <button class="add-team"><span class="add-plus">+</span> Add Fact</button>
+    </section>
+    
+</main>
+
+<%- include('./partials/foot')  %>

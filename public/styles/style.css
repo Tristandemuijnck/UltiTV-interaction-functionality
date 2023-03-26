@@ -618,11 +618,102 @@ header{
     font-size: 1.5em;
 }
 
+/* Team detail page */
+.players-list{
+    display: flex;
+    flex-direction: column;
+    padding: var(--cell-padding-4);
+    margin-top: 1em;
+}
+
+.team-player-heading{
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.team-player-list{
+    display: flex;
+    flex-direction: column;
+    background: var(--card-background);
+    border-radius: var(--border-radius-3);
+    padding: 0.8em;
+    box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.75);
+    margin-bottom: .625em;
+    row-gap: 0.5em;
+}
+
+.team-player-card{
+    display: flex;
+    flex-direction: row;
+    padding: 0.4em;
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.45);
+    background: rgb(239, 239, 239);
+    width: 100%;
+}
+
+.team-player-jersey-num{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-player-name{
+    width: 70%;
+}
+
+.more-team-player-info{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.team-facts{
+    display: flex;
+    flex-direction: column;
+    padding: var(--cell-padding-4);
+    margin-top: 1em;
+}
+
+.team-facts-heading{
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.team-facts-list{
+    display: flex;
+    flex-direction: column;
+    background: var(--card-background);
+    border-radius: var(--border-radius-3);
+    padding: 0.8em;
+    box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.75);
+    margin-bottom: .625em;
+    row-gap: 0.5em;
+}
+
+.team-facts-card{
+    display: flex;
+    flex-direction: column;
+    padding: 0.4em;
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.45);
+    border: 1px solid var(--background);
+    row-gap: 0.5em;
+}
+
+.team-facts-title{
+    font-weight: 500;
+    text-align: center;
+    border-bottom: solid 1px var(--orange);
+    margin: 0 auto;
+    min-width: 66%;
+}
+
 @media (min-width: 48rem){
     .index-main{
         display: grid;
         grid-template-columns: 1.3fr 1.3fr 1fr 1fr 1fr 1fr; 
-        /* grid-template-rows: 1fr 0.3fr 0.3fr 1fr 1fr 1fr 1fr;  */
         grid-auto-rows: fit-content(1em);
         gap: 16px 16px; 
         grid-template-areas: 
@@ -775,11 +866,63 @@ header{
         margin-right: auto;
         margin-top: 1em;
     }
+
+    /* Teams details page */
+    .players-main{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .players-list{
+        width: 70%;
+    }
+
+    .team-player-list{
+        display: flex;
+        flex-flow: row wrap;
+        column-gap: 0.4em;
+    }
+
+    .team-player-card{
+        width: 49%
+    }
+
+    /* .team-player-card:nth-child(3n+1){
+        background: rgb(148, 152, 150);
+    }
+
+    .team-player-card:nth-child(3n+2){
+        background: rgb(97, 97, 97);
+    }
+
+    .team-player-card:nth-child(3n+3){
+        background: rgb(224, 224, 224);
+    } */
+
+    .team-facts{
+        width: 30%;
+    }
 }
 
 @media (min-width: 64em){
+
+    .players-main{
+        max-width: 90%;
+        margin: 0 auto;
+        justify-content: flex-start;
+    }
+
     .teams{
         width: 85%;
         margin: 2em auto;
+    }
+
+    .players-list{
+        max-width: 48em;
+    }
+
+    .team-facts{
+        max-width: 24em;
     }
 }

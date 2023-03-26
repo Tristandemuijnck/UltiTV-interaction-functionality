@@ -54,6 +54,10 @@ server.get("/teams", async (req, res) => {
     res.render('teams')
 })
 
+server.get("/players", async (req, res) => {
+    res.render('players')
+})
+
 server.listen(server.get("port"), () => {
     console.log(`Application started on http://localhost:${server.get("port")}`)
 })
