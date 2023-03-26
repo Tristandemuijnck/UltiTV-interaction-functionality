@@ -58,6 +58,10 @@ server.get("/players", async (req, res) => {
     res.render('players')
 })
 
+server.get("/player", async (req, res) => {
+    res.render('player')
+})
+
 server.listen(server.get("port"), () => {
     console.log(`Application started on http://localhost:${server.get("port")}`)
 })

@@ -710,6 +710,85 @@ header{
     min-width: 66%;
 }
 
+/* Player page */
+.player{
+    display: flex;
+    flex-direction: column;
+    padding: var(--cell-padding-8);
+    margin-top: 1em;
+}
+
+.player-heading{
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.player-basic{
+    display: flex;
+    flex-direction: column;
+    background: var(--card-background);
+    border-radius: var(--border-radius-3);
+    padding: 0.8em;
+    box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.75);
+    margin-bottom: .625em;
+    row-gap: 0.5em;
+}
+
+.player-basic h2{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.player-basic-info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+}
+
+.info-field{
+    display: flex;
+    flex-direction: column;
+    padding: 0.4em;
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.45);
+    border: 1px solid var(--background);
+    row-gap: 0.5em;
+}
+
+.info-title{
+    font-weight: 500;
+    text-align: center;
+    border-bottom: solid 1px var(--orange);
+    margin: 0 auto;
+    min-width: 66%;
+}
+
+.info-content{
+    text-align: center;
+}
+
+.player-facts{
+    display: flex;
+    flex-direction: column;
+    background: var(--card-background);
+    border-radius: var(--border-radius-3);
+    padding: 0.8em;
+    box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.75);
+    margin-bottom: .625em;
+    row-gap: 0.5em;
+}
+
+.player-facts h2{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.player-facts-info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+}
+
 @media (min-width: 48rem){
     .index-main{
         display: grid;
@@ -903,6 +982,33 @@ header{
     .team-facts{
         width: 30%;
     }
+
+    /* Player page */
+    .player-info-wrapper{
+        display: flex;
+        flex-direction: row;
+        column-gap: 0.5em;
+    }
+
+    .player-basic{
+        min-width: 33%;
+        margin-bottom: auto;
+    }
+
+    .player-facts{
+        min-width: 33%;
+    }
+
+    .info-title{
+        text-align: left;
+        margin: 0 1em;
+        padding: 0.3em 0;
+    }
+
+    .info-content{
+        text-align: left;
+        margin: 0 1em;
+    }
 }
 
 @media (min-width: 64em){
@@ -924,5 +1030,19 @@ header{
 
     .team-facts{
         max-width: 24em;
+    }
+
+    /* Player page */
+
+    .player-facts-info{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        row-gap: 0.5em;
+        column-gap: 0.5em;
+    }
+
+    .player-facts-info .info-field{
+        width: 48%;
     }
 }
