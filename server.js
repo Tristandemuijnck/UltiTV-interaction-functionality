@@ -5,7 +5,10 @@ import fs from "fs"
 const server = express();
 
 // Api url
-const playerUrl = "https://api.ultitv.fdnd.nl/api/v1/players"
+const apiUrl = "https://api.ultitv.fdnd.nl/api/v1"
+const postUrl = "https://api.ultitv.fdnd.nl/api/v1/players"
+
+const questionData = await dataFetch(`${apiUrl}/questions`)
 
 // Load json files
 const gameData = fs.readFileSync('./public/api/game/943.json')
@@ -62,6 +65,32 @@ server.get("/player", async (req, res) => {
     res.render('player')
 })
 
+server.get("/addplayer", async (req, res) => {
+    res.render('./modules/forms/playerFact', {questions: questionData.questions})
+})
+
+server.post("/addplayer", async (req, res) => {
+    req.body.answers = 
+    [
+        {
+            content: req.body.content,
+            questionId: req.body.question
+        }
+    ]
+
+    postJson(postUrl, req.body).then((data) => {
+        let newPlayer = req.body
+
+        if (data.succes) {
+            res.redirect("/players")
+        } else{
+            const errMsg = `${data.message}: Creating new player failed.`
+            const newplayer = {error: errMsg, values: newPlayer}
+            res.render('./modules/forms/playerFact', {questions: questionData.questions, newplayer})
+        }
+    })
+})
+
 server.listen(server.get("port"), () => {
     console.log(`Application started on http://localhost:${server.get("port")}`)
 })
@@ -72,4 +101,23 @@ async function dataFetch(url) {
         .then((response) => response.json())
         .catch((error) => error)
     return data
+}
+
+/**
+ * postJson() is a wrapper for the experimental node fetch api. It fetches the url
+ * passed as a parameter using the POST method and the value from the body paramater
+ * as a payload. It returns the response body parsed through json.
+ * @param {*} url the api endpoint to address
+ * @param {*} body the payload to send along
+ * @returns the json response from the api endpoint
+ */
+export async function postJson(url, body) {
+	console.log(2, JSON.stringify(body))
+    return await fetch(url, {
+        method: 'post',
+        body: JSON.stringify(body),
+        headers: { 'Content-Type': 'application/json' },
+    })
+    .then((response) => response.json())
+    .catch((error) => error)
 }
