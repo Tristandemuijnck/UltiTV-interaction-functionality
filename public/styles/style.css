@@ -804,14 +804,17 @@ header{
 }
 
 .add-player-form{
-    display: flex;
-    flex-flow: row wrap;
+    /* display: flex; */
+    /* flex-flow: row wrap; */
     row-gap: 0.8em;
     column-gap: 0.8em;
     background-color: var(--card-background);
     padding: 0.8em;
     border-radius: var(--border-radius-3);
     box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.75);
+
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .form-field{
@@ -827,6 +830,14 @@ header{
     border-radius: var(--border-radius-3);
 }
 
+.form-field select{
+    /* max-width: 14em; */
+}
+
+.form-field-submit{
+    display: flex;
+}
+
 .add-player-form label{
     font-weight: 500;
     font-size: 1em;
@@ -838,16 +849,17 @@ header{
 
 .form-radio-options{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     border: solid 1px var(--orange);
     padding: 0.2em 0.5em;
     border-radius: var(--border-radius-3);
     background-color: white;
+    column-gap: 0.5em;
 }
 
 .form-radio{
     display: flex;
-    column-gap: 0.5em;
+    column-gap: 0.3em;
 }
 
 .form-button{
@@ -856,6 +868,7 @@ header{
     border-radius: var(--border-radius-3);
     background-color: white;
     height: 2em;
+    width: 100%;
 }
 
 
@@ -1079,6 +1092,17 @@ header{
         text-align: left;
         margin: 0 1em;
     }
+
+    /* Player form */
+    .add-player-form{
+        width: 66%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-field-submit{
+        display: flex;
+        align-items: flex-end;
+    }
 }
 
 @media (min-width: 64em){
@@ -1114,5 +1138,10 @@ header{
 
     .player-facts-info .info-field{
         width: 48%;
+    }
+
+    /* Player form */
+    .add-player-form{
+        width: 50%;
     }
 }
