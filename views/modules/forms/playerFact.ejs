@@ -1,40 +1,47 @@
 <%- include("../../partials/head") %>
 
-<section class="player-fact-form">
-    <form action="/addplayer" method="post" name="add-player-fact">
-        <label>Name:
-            <input type="text" name="name" id="name" value="<%= locals.values?.name ?? '' %>">
-        </label>
-        
-        <label>Gender:
-            <input type="radio" name="gender" id="gender-m" value="Male">Male
-            <input type="radio" name="gender" id="gender-f" value="Female">Female
-        </label>
+<main class="add-player-main">
+    <section class="player-add-form">
 
-        <label>Jersey Number:
-            <input type="text" name="jerseyNumber" id="jersey" value="<%= locals.values?.jerseyNumber ?? '' %>">
-        </label>
+        <div class="top-info">
+            <h1 class="add-player-heading">Add Player</h1>
+        </div>
+    
+        <form action="/addplayer" method="post" name="add-player">
+            <label>Name:
+                <input type="text" name="name" id="name" value="<%= locals.values?.name ?? '' %>">
+            </label>
+            
+            <label>Gender:
+                <input type="radio" name="gender" id="gender-m" value="Male">Male
+                <input type="radio" name="gender" id="gender-f" value="Female">Female
+            </label>
+    
+            <label>Jersey Number:
+                <input type="text" name="jerseyNumber" id="jersey" value="<%= locals.values?.jerseyNumber ?? '' %>">
+            </label>
+    
+            <label>Question:
+                <select name="question" id="question">
+                    <option selected disabled>Choose a question</option>
+    
+                    <% if (typeof questions !== "undefined") { %>
+                        <% questions.forEach(question => { %>
+                            <option value="<%= question.id %>"><%= question.title %></option>	
+                        <% }) %>
+                    <% } else { %>
+                        <p>No questions available.</p>
+                    <% } %>
+                </select>
+            </label>
+    
+            <label>Answer:
+                <input type="text" name="content" id="answer" value="<%= locals.values?.content ?? '' %>">
+            </label>
+    
+            <input type="submit" value="Add Player">
+        </form>
+    </section>
+</main>
 
-        <label>Question:
-            <select name="question" id="question">
-                <option selected disabled>Choose a question</option>
-
-                <% if (typeof questions !== "undefined") { %>
-                    <% questions.forEach(question => { %>
-                        <option value="<%= question.id %>"><%= question.title %></option>	
-                    <% }) %>
-                <% } else { %>
-                    <p>No questions available.</p>
-                <% } %>
-            </select>
-        </label>
-
-        <label>Answer:
-            <input type="text" name="content" id="answer" value="<%= locals.values?.content ?? '' %>">
-        </label>
-
-        <input type="submit" value="Add Player">
-    </form>
-</section>
-
-<%- include('./partials/foot')  %>
+<%- include('../../partials/foot')  %>
