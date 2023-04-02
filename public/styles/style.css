@@ -850,6 +850,14 @@ header{
     column-gap: 0.5em;
 }
 
+.form-button{
+    border: solid 1px var(--orange);
+    padding: 0.4em 0.6em;
+    border-radius: var(--border-radius-3);
+    background-color: white;
+    height: 2em;
+}
+
 
 @media (min-width: 48rem){
     .index-main{
