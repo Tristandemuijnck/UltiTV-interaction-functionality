@@ -86,6 +86,11 @@ header{
     font-size: 0.95em;
 }
 
+.nav-link:hover{
+    color: var(--orange);
+    font-weight: 500;
+}
+
 /* Main */
 .index-main{
     display: flex;
@@ -437,6 +442,7 @@ header{
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    border-radius: var(--border-radius-3);
 }
 
 .close{
@@ -535,6 +541,12 @@ header{
     text-transform: uppercase;
 }
 
+.division-btn:hover{
+    background: var(--orange);
+    cursor: pointer;
+    font-weight: 500;
+}
+
 .team-table{
     margin: 0;
     padding: 0;
@@ -600,6 +612,10 @@ header{
     width: 1em;
 }
 
+.arrow-right:hover{
+    transform: scale(1.1);
+}
+
 .add-team{
     display: flex;
     width: auto;
@@ -612,6 +628,12 @@ header{
     justify-content: center;
     align-items: center;
     column-gap: 0.5em;
+}
+
+.add-team:hover{
+    background: var(--orange);
+    cursor: pointer;
+    font-weight: 500;
 }
 
 .add-plus{
@@ -869,6 +891,13 @@ header{
     background-color: white;
     height: 2em;
     width: 100%;
+}
+
+.form-button:hover{
+    background: var(--orange);
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
 }
 
 
