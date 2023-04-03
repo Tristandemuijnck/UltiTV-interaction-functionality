@@ -315,7 +315,7 @@ header{
     width: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 0.8em;
+    row-gap: 0.4em;
 }
 
 .team-name-heading{
@@ -332,7 +332,7 @@ header{
     /* padding: 0.4em; */
     position: relative;
     box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.45);
-    min-height: 3.5em;
+    /* min-height: 3.5em; */
 }
 
 .player-card:nth-child(even){
@@ -387,6 +387,7 @@ header{
     display: flex;
     flex-direction: column;
     position: relative;
+    justify-content: center;
 }
 
 .player-name-wrapper{
@@ -416,7 +417,19 @@ header{
 }
 
 .player-extra-info-form input[type="submit"]{
-    padding: 0 0.2em;
+    padding: 0.2em 0.4em;
+    border: 1px solid var(--orange);
+    border-radius: var(--border-radius-3);
+    background: var(--orange);
+    color: white;
+    transition: 0.2s;
+}
+
+.player-extra-info-form input[type="submit"]:hover{
+    background: white;
+    color: var(--orange);
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .modal{
@@ -726,10 +739,13 @@ header{
 
 .team-facts-title{
     font-weight: 500;
-    text-align: center;
     border-bottom: solid 1px var(--orange);
-    margin: 0 auto;
     min-width: 66%;
+    padding: 0.3em 0;
+}
+
+.team-facts-content{
+    padding: 0.3em 0;
 }
 
 .player-modal-content{
@@ -991,6 +1007,7 @@ header{
         margin: 0 0 auto 0;
         flex-direction: row;
         column-gap: 0.8em;
+        padding: 0.8em 1em;
     }
 
     .reverse{
@@ -1107,6 +1124,15 @@ header{
 
     .team-facts{
         width: 30%;
+    }
+
+    .team-facts-title{
+        text-align: center;
+        margin-right: 0 auto;
+    }
+
+    .team-facts-content{
+        padding: 0.3em 0.2em;
     }
 
     .player-modal-content{
