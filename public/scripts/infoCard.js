@@ -1,7 +1,7 @@
 const extraInfo = document.getElementsByClassName("player-extra-info")
 const modal = document.getElementsByClassName("modal")
 const closeBtn = document.getElementsByClassName("close")
-const playerInfoP = document.getElementsByClassName("playerInfo")
+const playerInfoP = document.getElementsByClassName("player-info")
 const extraInfoForm = document.getElementsByClassName("player-extra-info-form")
 const extraInfoFormPlayer = document.getElementsByName("playerId")
 
@@ -26,7 +26,7 @@ for (let index = 0; index < extraInfoForm.length; index++) {
         data.forEach(player => {
             // Create string with player info
             let playerInfoContent = `
-                <strong>${player.title}</strong> - ${player.content}<br>
+                <div class="player-title"><strong>${player.title}</strong> - ${player.content}<br></div>
             `
             // Add player info to player info string
             playerInfo += playerInfoContent

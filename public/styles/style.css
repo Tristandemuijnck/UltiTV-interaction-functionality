@@ -450,10 +450,10 @@ header{
 }
 
 .modal-content{
-    background: #fefefe;
-    margin: 15% auto;
+    background: var(--background);
+    margin: 8% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid var(--orange);
     width: 80%;
     border-radius: var(--border-radius-3);
 }
@@ -466,9 +466,18 @@ header{
 }
 
 .close:hover, .close:focus{
-    color: black;
+    color: var(--orange);
     text-decoration: none;
     cursor: pointer;
+    transform: scale(1.1);
+}
+
+.player-info{
+    margin-top: 1em;
+}
+
+.player-title{
+    color: white;
 }
 
 .player-pronounced{
@@ -838,7 +847,6 @@ header{
 
 /* Player add form */
 .add-player-main{
-    width: 50%;
     margin: auto;
 }
 
@@ -1127,12 +1135,16 @@ header{
     }
 
     .team-facts-title{
-        text-align: center;
         margin-right: 0 auto;
+        padding: 0.3em 0.2em;
     }
 
     .team-facts-content{
         padding: 0.3em 0.2em;
+    }
+
+    .add-player-main{
+        width: 66%;
     }
 
     .player-modal-content{
