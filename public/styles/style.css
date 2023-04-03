@@ -734,11 +734,11 @@ header{
 
 .player-modal-content{
     background: var(--background);
-    margin: 15% auto;
+    margin: 8% auto;
     padding: 20px;
     border: 1px solid var(--orange);
     border-radius: var(--border-radius-3);
-    width: 50%;
+    width: 95%;
 }
 
 /* Player page */
@@ -1107,6 +1107,10 @@ header{
 
     .team-facts{
         width: 30%;
+    }
+
+    .player-modal-content{
+        width: 70%;
     }
 
     /* Player page */
