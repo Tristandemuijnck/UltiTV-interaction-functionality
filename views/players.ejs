@@ -9,7 +9,7 @@
         <div class="team-player-list">
             <%- include('./modules/teamPlayers/playerCard') %>
         </div>
-        <a href="addplayer" class="add-team"><span class="add-plus">+</span> Add Player</a>
+        <a href="addplayer" class="add-team" id="add-player-btn"><span class="add-plus">+</span> Add Player</a>
     </section>
     <section class="team-facts">
         <div class="top-info">
@@ -20,7 +20,18 @@
         </div>
         <button class="add-team"><span class="add-plus">+</span> Add Fact</button>
     </section>
+
+    <!-- Modal add player form -->
+    <div class="modal" id="add-player-modal">
+        <div class="player-modal-content">
+            <span class="close">&times;</span>
+            <p class="playerInfo">
+                <%- include("./modules/forms/playerFact") %>
+            </p>
+        </div>
+    </div>
     
 </main>
 
+<script type="module" src="./scripts/addForm.js"></script>
 <%- include('./partials/foot')  %>

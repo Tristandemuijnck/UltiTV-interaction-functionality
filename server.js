@@ -66,7 +66,7 @@ server.get("/player", async (req, res) => {
 })
 
 server.get("/addplayer", async (req, res) => {
-    res.render('./modules/forms/playerFact', {questions: questionData.questions})
+    res.render('playerAdd', {questions: questionData.questions})
 })
 
 server.post("/addplayer", async (req, res) => {
@@ -86,7 +86,7 @@ server.post("/addplayer", async (req, res) => {
         } else{
             const errMsg = `${data.message}: Creating new player failed.`
             const newplayer = {error: errMsg, values: newPlayer}
-            res.render('./modules/forms/playerFact', {questions: questionData.questions, newplayer})
+            res.render('playerAdd', {questions: questionData.questions, newplayer})
         }
     })
 })

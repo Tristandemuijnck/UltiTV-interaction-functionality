@@ -732,6 +732,15 @@ header{
     min-width: 66%;
 }
 
+.player-modal-content{
+    background: var(--background);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--orange);
+    border-radius: var(--border-radius-3);
+    width: 50%;
+}
+
 /* Player page */
 .player{
     display: flex;
@@ -812,6 +821,11 @@ header{
 }
 
 /* Player add form */
+.add-player-main{
+    width: 50%;
+    margin: auto;
+}
+
 .player-add-form{
     display: flex;
     flex-direction: column;
@@ -1124,7 +1138,7 @@ header{
 
     /* Player form */
     .add-player-form{
-        width: 66%;
+        /* width: 66%; */
         grid-template-columns: 1fr 1fr;
     }
 
@@ -1171,6 +1185,6 @@ header{
 
     /* Player form */
     .add-player-form{
-        width: 50%;
+        /* width: 50%; */
     }
 }
