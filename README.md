@@ -22,7 +22,7 @@ Dit project omvat een tool met alle benodigde info voor het geven van commentaar
 
 <img src="https://user-images.githubusercontent.com/43402897/229906723-8781ffd1-6e43-4d90-8530-41cb64f968eb.png" width=600 >
 
-Voor een live versie van de tool: https://indigo-camel-belt.cyclic.app/
+Voor een live versie van de tool: https://ultitv-tristan.cyclic.app/
 
 ## 🎭 Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
