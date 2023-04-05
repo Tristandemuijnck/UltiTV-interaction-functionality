@@ -48,6 +48,14 @@ EJS is een templating language voor het genereren van HTML met JavaScript. Het z
 ### ExpressJS
 ExpressJS is een NodeJS framework. Express helpt binnen dit project bij het verwerken van API requests en responses.
 
+### Progressive enhancement
+Progressive enhancement zorgt ervoor dat een website voor iedereen toegankelijk is. Het begint met de core functionaliteiten van de website. Dit betekent dat puur de html is opgebouwd zonder styling of client side scripting. Ook hoort hier het afhandelen van formulieren met NodeJS bij. Vervolgens wordt de CSS toegevoegd om de html en formulieren mooi te maken. Tenslotte wordt er JavaScript toegevoegd om de user experience te verbeteren. Voor dit project heb ik dat in de vorm van een modal gedaan voor het speler toevoegen formulier.
+
+De core functionaliteit van deze functie is een `<a>` naar een andere page met het formulier. 
+De verbeterde user experience is het gebruik van `e.preventDefault()` om ervoor te zorgen dat de gebruiker niet naar een andere page gaat, maar op dezelfde page blijft. Daarnaast wordt er een modal geopend met hetzelfde formulier als de core functionaliteit.
+
+[Progressive enhancement binnen dit project.](https://github.com/Tristandemuijnck/UltiTV-interaction-functionality/wiki/Bouwen#enhancement)
+
 ## 📥 Installatie
 
 1. Clone of download deze repository naar de gewenste folder.
