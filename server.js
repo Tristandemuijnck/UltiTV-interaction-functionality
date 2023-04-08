@@ -1,4 +1,4 @@
-import express from "express"
+import express, { Router } from "express"
 import bodyParser from "body-parser"
 import fs from "fs"
 
@@ -70,20 +70,26 @@ server.get("/addplayer", async (req, res) => {
 })
 
 server.post("/addplayer", async (req, res) => {
+    // Create a new array with the content and answers and append it to req.body as a new answers object
     req.body.answers = 
     [
         {
+            // Assign the body.content to content.
             content: req.body.content,
+            // Assign the body.question to questionId.
             questionId: req.body.question
         }
     ]
 
     postJson(postUrl, req.body).then((data) => {
+        // Create new player variable and assign req.body to it in case the form does not post correctly
         let newPlayer = req.body
 
+        // Check if the post was succesfull and redirect
         if (data.succes) {
             res.redirect("/players")
         } else{
+            // If post was not succesfull, create an error message and render the form again with filled in values
             const errMsg = `${data.message}: Creating new player failed.`
             const newplayer = {error: errMsg, values: newPlayer}
             res.render('playerAdd', {questions: questionData.questions, newplayer})
